@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../OneDrive/Desktop/assignment/feedback-collector/netlify/functions/submit-feedback.js"],
+  "sourceRoot": "C:/Users/sinha/AppData/Local/Temp/tmp-9744-Lm8ooyEDfldz",
+  "sourcesContent": ["// netlify/functions/submit-feedback.js\r\n\r\nlet feedbacks = global.feedbacks || [];\r\nglobal.feedbacks = feedbacks;\r\n\r\nexport async function handler(event) {\r\n  if (event.httpMethod !== \"POST\") {\r\n    return { statusCode: 405, body: \"Method Not Allowed\" };\r\n  }\r\n\r\n  const { name, email, message } = JSON.parse(event.body || \"{}\");\r\n\r\n  if (!name || !email || !message) {\r\n    return {\r\n      statusCode: 400,\r\n      body: JSON.stringify({ error: \"All fields are required\" }),\r\n    };\r\n  }\r\n\r\n  const newFeedback = { name, email, message };\r\n  feedbacks.push(newFeedback);\r\n\r\n  return {\r\n    statusCode: 200,\r\n    body: JSON.stringify({ message: \"Feedback received\", data: newFeedback }),\r\n  };\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAEA,IAAI,YAAY,OAAO,aAAa,CAAC;AACrC,OAAO,YAAY;AAEnB,eAAsB,QAAQ,OAAO;AACnC,MAAI,MAAM,eAAe,QAAQ;AAC/B,WAAO,EAAE,YAAY,KAAK,MAAM,qBAAqB;AAAA,EACvD;AAEA,QAAM,EAAE,MAAM,OAAO,QAAQ,IAAI,KAAK,MAAM,MAAM,QAAQ,IAAI;AAE9D,MAAI,CAAC,QAAQ,CAAC,SAAS,CAAC,SAAS;AAC/B,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU,EAAE,OAAO,0BAA0B,CAAC;AAAA,IAC3D;AAAA,EACF;AAEA,QAAM,cAAc,EAAE,MAAM,OAAO,QAAQ;AAC3C,YAAU,KAAK,WAAW;AAE1B,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,EAAE,SAAS,qBAAqB,MAAM,YAAY,CAAC;AAAA,EAC1E;AACF;",
+  "names": []
+}

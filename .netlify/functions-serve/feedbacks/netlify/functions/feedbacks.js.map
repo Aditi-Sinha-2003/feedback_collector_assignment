@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../OneDrive/Desktop/assignment/feedback-collector/netlify/functions/feedbacks.js"],
+  "sourceRoot": "C:/Users/sinha/AppData/Local/Temp/tmp-9744-jVKoMx0XNqLI",
+  "sourcesContent": ["// netlify/functions/feedbacks.js\r\n\r\nlet feedbacks = global.feedbacks || [];\r\nglobal.feedbacks = feedbacks;\r\n\r\nexport async function handler() {\r\n  return {\r\n    statusCode: 200,\r\n    body: JSON.stringify(feedbacks),\r\n  };\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAEA,IAAI,YAAY,OAAO,aAAa,CAAC;AACrC,OAAO,YAAY;AAEnB,eAAsB,UAAU;AAC9B,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,SAAS;AAAA,EAChC;AACF;",
+  "names": []
+}
